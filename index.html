@@ -14,7 +14,7 @@
     x-cloak
     class="grid grid-cols-1 lg:grid-cols-2 gap-4 place-content-center place-items-center h-full auto-rows-auto"
   >
-    <div id="logo" class="w-full max-w-prose lg:justify-self-end">
+    <div id="logo" class="w-full max-w-prose">
       <?xml version="1.0" encoding="UTF-8" standalone="no"?>
         <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
         <svg width="100%" height="100%" class="fill-current p-2" viewBox="0 0 2967 833" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
@@ -79,7 +79,7 @@
         x-effect="localServerStatus"
         x-show="localServerStatus == 200"
         x-transition
-        href="http://liveshowy.local"
+        href="https://liveshowy.local"
         class="rounded-sm text-center disabled:bg-violet-700 bg-green-600 text-white px-2 py-1 font-bold"
       >
         LAUNCH
@@ -105,7 +105,7 @@
         async pingLiveShowy() {
           // console.log('currentRequest', this.currentRequest)
           if (!this.currentRequest) {
-            this.currentRequest = fetch('http://liveshowy.local/ping', {
+            this.currentRequest = fetch('https://liveshowy.local/ping', {
               method: 'GET',
               keepalive: false,
               cache: 'no-cache'
