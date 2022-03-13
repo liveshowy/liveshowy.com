@@ -79,7 +79,7 @@
         x-effect="localServerStatus"
         x-show="localServerStatus == 200"
         x-transition
-        href="https://liveshowy.local"
+        href="http://liveshowy.local"
         class="rounded-sm text-center disabled:bg-violet-700 bg-green-600 text-white px-2 py-1 font-bold"
       >
         LAUNCH
@@ -97,18 +97,18 @@
         currentRequest: null,
 
         init() {
-          this.pingLiveShowy()
-
-          this.pingInterval = setInterval(this.pingLiveShowy, 10000)
+          // this.pingLiveShowy()
+          // this.pingInterval = setInterval(this.pingLiveShowy, 10000)
         },
 
         async pingLiveShowy() {
           // console.log('currentRequest', this.currentRequest)
           if (!this.currentRequest) {
-            this.currentRequest = fetch('https://liveshowy.local/ping', {
+            this.currentRequest = fetch('http://liveshowy.local/ping', {
               method: 'GET',
               keepalive: false,
-              cache: 'no-cache'
+              cache: 'no-cache',
+              credentials: 'omit',
             })
             .then(response => response.status)
             .catch(error => "error")
